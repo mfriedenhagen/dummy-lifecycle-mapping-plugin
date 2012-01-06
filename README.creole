@@ -1,7 +1,7 @@
 = What is this good for =
 
-As discussed on [http://stackoverflow.com/questions/7905501/get-rid-of-pom-not-found-warning-for-org-eclipse-m2elifecycle-mapping/|stackoverflow]
-the {{lifecycle-mapping}} plugin is just a placeholder for the configuration of Eclipse.
+As discussed on [[http://stackoverflow.com/questions/7905501/get-rid-of-pom-not-found-warning-for-org-eclipse-m2elifecycle-mapping/|stackoverflow]]
+the {{{lifecycle-mapping}}} plugin is just a placeholder for the configuration of Eclipse.
 However right now, as the plugin does not exist at repo1.maven.org, maven spits out the following:
 
 {{{
