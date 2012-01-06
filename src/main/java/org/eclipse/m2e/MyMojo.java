@@ -19,63 +19,15 @@ package org.eclipse.m2e;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-
 /**
- * Goal which touches a timestamp file.
- *
- * @goal touch
+ * Goal which just spits out info.
  * 
- * @phase process-sources
+ * @goal dummy
+ * 
  */
-public class MyMojo
-    extends AbstractMojo
-{
-    /**
-     * Location of the file.
-     * @parameter expression="${project.build.directory}"
-     * @required
-     */
-    private File outputDirectory;
-
-    public void execute()
-        throws MojoExecutionException
-    {
-        File f = outputDirectory;
-
-        if ( !f.exists() )
-        {
-            f.mkdirs();
-        }
-
-        File touch = new File( f, "touch.txt" );
-
-        FileWriter w = null;
-        try
-        {
-            w = new FileWriter( touch );
-
-            w.write( "touch.txt" );
-        }
-        catch ( IOException e )
-        {
-            throw new MojoExecutionException( "Error creating file " + touch, e );
-        }
-        finally
-        {
-            if ( w != null )
-            {
-                try
-                {
-                    w.close();
-                }
-                catch ( IOException e )
-                {
-                    // ignore
-                }
-            }
-        }
+public class MyMojo extends AbstractMojo {
+    /** {@inheritDoc} */
+    public void execute() throws MojoExecutionException {
+        getLog().info("See http://stackoverflow.com/questions/7905501/get-rid-of-pom-not-found-warning-for-org-eclipse-m2elifecycle-mapping/8741403#8741403");
     }
 }
