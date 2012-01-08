@@ -12,3 +12,11 @@ However right now, as the plugin does not exist at repo1.maven.org, maven spits 
 which is confusing. When you run a CI server, people will come and ask what these warnings mean.
 So I created a dummy nonsense plugin, just to provide a valid plugin which will 
 do nothing.
+
+= How to install =
+
+The easiest way is to checkout the repository and run {{{mvn install}}} or 
+{{{mvn deploy -DaltDeploymentRepository=REPOID::default::PLUGIN_REPO}}}.
+
+Otherwise you may download the [[https://raw.github.com/mfriedenhagen/dummy-lifecycle-mapping-plugin/master/pom.xml|pom]] and the binary jar from https://github.com/downloads/mfriedenhagen/dummy-lifecycle-mapping-plugin/lifecycle-mapping-1.0.0.jar
+and run {{{mvn install:install-file -DpomFile=pom.xml -Dfile=lifecycle-mapping-1.0.0.jar}}}.
