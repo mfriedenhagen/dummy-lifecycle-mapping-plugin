@@ -19,6 +19,8 @@ package org.eclipse.m2e;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 
+import java.util.List;
+
 /**
  * Goal which just spits out info.
  * 
@@ -26,6 +28,14 @@ import org.apache.maven.plugin.MojoExecutionException;
  * 
  */
 public class MyMojo extends AbstractMojo {
+
+    /**
+     * fake parameter to make Intellij Idea pom plugin validation succeed
+     *
+     * @parameter
+     */
+    private List lifecycleMappingMetadata;
+
     /** {@inheritDoc} */
     public void execute() throws MojoExecutionException {
         getLog().info("See http://stackoverflow.com/questions/7905501/get-rid-of-pom-not-found-warning-for-org-eclipse-m2elifecycle-mapping/8741403#8741403");
